@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9019be52-f25d-4a12-9cc0-f314f3911c2e}</ProjectGuid>
-    <RootNamespace>pharmacy</RootNamespace>
+    <ProjectGuid>{ff65f800-2fc0-45bf-bc2e-88f2a4b8b7b0}</ProjectGuid>
+    <RootNamespace>libraries</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -128,12 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="medicine.h" />
+    <ClInclude Include="sales.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libraries\libraries.vcxproj">
-      <Project>{ff65f800-2fc0-45bf-bc2e-88f2a4b8b7b0}</Project>
-    </ProjectReference>
+    <ClCompile Include="medicine.cpp" />
+    <ClCompile Include="sales.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
