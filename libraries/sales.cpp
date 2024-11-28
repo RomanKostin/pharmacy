@@ -9,16 +9,16 @@ void Pharmacy::sales::PrintSales()
 {
 	if (this->sales.empty())
 	{
-		std::cout << "Ïðîäàæè îòñóòñâóþò";
+		std::cout << "ÐŸÑ€Ð¾Ð´Ð°Ð¶Ð¸ Ð¾Ñ‚ÑÑƒÑ‚ÑÐ²ÑƒÑŽÑ‚";
 	}
 	else
 	{
 		for (const auto& entry : this->sales)
 		{
-			std::cout << "Ïåðèîä " << entry.first << std::endl;
+			std::cout << "ÐŸÐµÑ€Ð¸Ð¾Ð´ " << entry.first << std::endl;
 			for (const auto& sale : entry.second)
 			{
-				std::cout << "  Ëåêàðñòâî: " << sale.first->GetName()<< ", Ïðîäàæè: " << sale.second << std::endl;
+				std::cout << "  Ð›ÐµÐºÐ°Ñ€ÑÑ‚Ð²Ð¾: " << sale.first->GetName()<< ", ÐŸÑ€Ð¾Ð´Ð°Ð¶Ð¸: " << sale.second << std::endl;
 			}
 		}
 	}

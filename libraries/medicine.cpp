@@ -2,7 +2,7 @@
 using namespace Pharmacy;
 void Pharmacy::medicine::PrintInfo()
 {
-	std::cout << "название: " << this->Name << " форма: " << this->Form << " изготовитель: " << this->Manufactorer << " цена,р: "<<" Против болезни: ";
+	std::cout << "РЅР°Р·РІР°РЅРёРµ: " << this->Name << " С„РѕСЂРјР°: " << this->Form << " РёР·РіРѕС‚РѕРІРёС‚РµР»СЊ: " << this->Manufactorer << " С†РµРЅР°,СЂ: "<<" РџСЂРѕС‚РёРІ Р±РѕР»РµР·РЅРё: ";
 	for (const auto& temp : Disease)
 	{
 		std::cout << temp->GetName() << " ";
