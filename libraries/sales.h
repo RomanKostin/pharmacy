@@ -2,14 +2,18 @@
 #include <iostream>
 #include <map>
 #include "medicine.h"
-namespace pharmacy
+namespace Pharmacy
 {
-	class sales
+	class sales final
 	{
 	private:
-		std::map < std::string , std::pair<std::unique_ptr<Pharmacy::medicine>, int >> sales;
+		
+		std::map < std::string , std::vector<std::pair<std::shared_ptr<Pharmacy::medicine>, int >>> sales;
+	
 	public:
-		void AddSales(std::unique_ptr<Pharmacy::medicine> medicine,int sales,std::string& period);
+
+		void AddSales(std::shared_ptr<Pharmacy::medicine> medicine,int sales,const std::string& period);
+
 		void PrintSales();
 	};
 }

@@ -1,11 +1,11 @@
 #include "sales.h"
 
-void pharmacy::sales::AddSales(std::unique_ptr<Pharmacy::medicine> medicine, int sales, std::string& period)
+void Pharmacy::sales::AddSales(std::shared_ptr<Pharmacy::medicine> medicine, int sales,const std::string& period)
 {
-	this->sales[period] = { std::move(medicine),sales};
+	this->sales[period].push_back(std::make_pair(medicine,sales));
 }
 
-void pharmacy::sales::PrintSales()
+void Pharmacy::sales::PrintSales()
 {
 	if (this->sales.empty())
 	{
@@ -13,9 +13,13 @@ void pharmacy::sales::PrintSales()
 	}
 	else
 	{
-		for (const auto& temp : this->sales)
+		for (const auto& entry : this->sales)
 		{
-			std::cout << "Период " << temp.first << " " << temp.second.first->GetName() << " продажи: " << temp.second.second << std::endl;
+			std::cout << "Период " << entry.first << std::endl;
+			for (const auto& sale : entry.second)
+			{
+				std::cout << "  Лекарство: " << sale.first->GetName()<< ", Продажи: " << sale.second << std::endl;
+			}
 		}
 	}
 }

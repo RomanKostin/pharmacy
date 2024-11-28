@@ -21,12 +21,18 @@
     <ClInclude Include="sales.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="disease.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="medicine.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="sales.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="disease.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

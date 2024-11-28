@@ -128,10 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="disease.h" />
     <ClInclude Include="medicine.h" />
     <ClInclude Include="sales.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="disease.cpp" />
     <ClCompile Include="medicine.cpp" />
     <ClCompile Include="sales.cpp" />
   </ItemGroup>

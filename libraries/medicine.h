@@ -1,20 +1,37 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "disease.h"
 namespace Pharmacy
 {
-	class medicine
+	class medicine;
+
+	class disease;
+	
+
+	class medicine final: public std::enable_shared_from_this<medicine>
 	{
 	private:
-		std::string Name,
-			Form,
-			Manufactorer,
-			Disease;
+
+		std::string Name;
+
+		std::string Form;
+		
+		std::string Manufactorer;
+		
+		std::vector<std::shared_ptr<Pharmacy::disease>>Disease;
+		
 		double Price;
+	
 	public:
-		medicine(std::string name, std::string form, std::string manufactorer, std::string disease, double price) :Name{ name }, Form{ form }, Manufactorer{ manufactorer }, Disease{ disease }, Price{ price } {}
+		
+		medicine(std::string name, std::string form, std::string manufactorer,double price) :Name{ name }, Form{ form }, Manufactorer{ manufactorer }, Price{ price } {}
+		
 		void PrintInfo();
+		
 		std::string GetName();
+		
+		std::vector<std::shared_ptr<disease>>& GetDisease() noexcept;
 	};
 }
 
