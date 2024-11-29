@@ -27,6 +27,8 @@ namespace Pharmacy
 		
 		medicine(std::string name, std::string form, std::string manufactorer,double price) :Name{ name }, Form{ form }, Manufactorer{ manufactorer }, Price{ price } {}
 		
+		static std::shared_ptr<medicine> CreateMedicine(std::string name, std::string form, std::string manufactorer, double price);
+
 		void PrintInfo();
 		
 		std::string GetName();
