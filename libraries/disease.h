@@ -10,6 +10,8 @@ namespace Pharmacy
 
 	class medicine;
 
+	std::wstring ToString(const disease& dis);
+
 	class disease final: public  std::enable_shared_from_this<disease>
 	{
 	private:
@@ -18,14 +20,18 @@ namespace Pharmacy
 
 		std::vector<std::weak_ptr<medicine>> Medicine;
 
+		disease(const std::string& diseases) :Disease{ diseases } {}
+
 	public:
 		
-		disease(const std::string& diseases) :Disease{ diseases } {}
 		
-		static std::shared_ptr<disease> CreateDisease(const std::string& disease);
+
+		static std::shared_ptr<disease> CreateDisease(const std::string& diseases);
 
 		bool AddMedicament(std::shared_ptr<medicine>& med);
 
-		std::string GetName();
+		std::string GetName() const;
+
+		std::string ToString() const;
 	};
 }

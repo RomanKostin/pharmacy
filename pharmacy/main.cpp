@@ -7,14 +7,10 @@ using namespace Pharmacy;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	auto Disease = std::make_shared<disease>("bolezn");
-	auto test = std::make_shared<medicine>("name", "form", "manufactorer", 100);
-	auto test2 = std::make_shared<medicine>("name2", "form", "manufactorer", 100);
-	sales Sale;
-	Sale.AddSales(test, 15, "today");
-	Sale.AddSales(test2, 405, "today");
-	Disease->AddMedicament(test);
-	test->PrintInfo();
-	Sale.PrintSales();
+	//auto Disease = disease::CreateDisease("bolezn");
+	//auto test=medicine::CreateMedicine("name", "form", "manufactorer", 100);
+	//auto test2 = medicine::CreateMedicine("name2", "form", "manufactorer", 100);
+	//Disease->AddMedicament(test);
+	//std::cout << test->ToString()<<"    "<<Disease->ToString()<<std::endl<<test2->ToString();
 	return 0;
 }

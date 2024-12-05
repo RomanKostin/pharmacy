@@ -1,19 +1,29 @@
 #pragma once
 #include <iostream>
-#include <map>
+#include <chrono>
 #include "medicine.h"
 namespace Pharmacy
 {
-	class sales final
+	class sale;
+
+	class medicine;
+
+	class sale final: public std::enable_shared_from_this<sale>
 	{
 	private:
 		
-		std::map < std::string , std::vector<std::pair<std::shared_ptr<Pharmacy::medicine>, int >>> sales;
-	
+		std::shared_ptr<medicine> Medicine;
+
+		std::chrono::year_month_day Date;
+
+		sale(std::chrono::year_month_day& date) :Date{ date } {}
+
 	public:
 
-		void AddSales(std::shared_ptr<Pharmacy::medicine> medicine,int sales,const std::string& period);
+		static std::shared_ptr<sale> CreateSale(std::chrono::year_month_day& date);
 
-		void PrintSales();
+		bool AddMedicament(std::shared_ptr<medicine>& med);
+
+		std::string ToString() const;
 	};
 }

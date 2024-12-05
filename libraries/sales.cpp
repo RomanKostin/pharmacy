@@ -1,25 +1,22 @@
 #include "sales.h"
-
-void Pharmacy::sales::AddSales(std::shared_ptr<Pharmacy::medicine> medicine, int sales,const std::string& period)
+#include <sstream>
+using namespace Pharmacy;
+std::shared_ptr<sale> Pharmacy::sale::CreateSale(std::chrono::year_month_day& date)
 {
-	this->sales[period].push_back(std::make_pair(medicine,sales));
+	return std::make_shared<sale>(sale{date});
 }
 
-void Pharmacy::sales::PrintSales()
+bool Pharmacy::sale::AddMedicament(std::shared_ptr<medicine>& med)
 {
-	if (this->sales.empty())
-	{
-		std::cout << "Продажи отсутсвуют";
-	}
-	else
-	{
-		for (const auto& entry : this->sales)
-		{
-			std::cout << "Период " << entry.first << std::endl;
-			for (const auto& sale : entry.second)
-			{
-				std::cout << "  Лекарство: " << sale.first->GetName()<< ", Продажи: " << sale.second << std::endl;
-			}
-		}
-	}
+	Medicine =med;
+	med.get()->GetSale().push_back( shared_from_this());
+	return true;
 }
+
+std::string Pharmacy::sale::ToString() const
+{
+	std::stringstream buffer{};
+	buffer << Date;
+	return buffer.str();
+}
+
