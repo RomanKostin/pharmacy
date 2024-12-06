@@ -35,7 +35,7 @@ std::string Pharmacy::medicine::GetManufactorer() const
 	return Manufactorer;
 }
 
-std::vector<std::shared_ptr<sale>> Pharmacy::medicine::GetSale()
+std::shared_ptr<sale> Pharmacy::medicine::GetSale()
 {
 	return Sale;
 }
