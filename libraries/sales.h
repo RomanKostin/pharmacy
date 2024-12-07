@@ -12,7 +12,7 @@ namespace Pharmacy
 	{
 	private:
 		
-		std::shared_ptr<medicine> Medicine;
+		std::unique_ptr<medicine> Medicine;
 
 		std::chrono::year_month_day Date;
 
@@ -22,7 +22,7 @@ namespace Pharmacy
 
 		static std::shared_ptr<sale> CreateSale(std::chrono::year_month_day& date);
 
-		bool AddMedicament(std::shared_ptr<medicine>& med);
+		bool AddMedicament(std::unique_ptr<medicine>& med);
 
 		std::string ToString() const;
 	};

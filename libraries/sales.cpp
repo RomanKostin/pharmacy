@@ -6,9 +6,9 @@ std::shared_ptr<sale> Pharmacy::sale::CreateSale(std::chrono::year_month_day& da
 	return std::make_shared<sale>(sale{date});
 }
 
-bool Pharmacy::sale::AddMedicament(std::shared_ptr<medicine>& med)
+bool Pharmacy::sale::AddMedicament(std::unique_ptr<medicine>& med)
 {
-	Medicine =med;
+	Medicine =std::move(med);
 	med.get()->GetSale()= shared_from_this();
 	return true;
 }
