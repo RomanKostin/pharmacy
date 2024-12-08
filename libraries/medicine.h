@@ -25,7 +25,7 @@ namespace Pharmacy
 		
 		std::vector<std::shared_ptr<Pharmacy::disease>>Disease;
 
-		std::weak_ptr<sale> Sale;
+		std::shared_ptr<sale> Sale;
 		
 		double Price;
 
@@ -43,7 +43,7 @@ namespace Pharmacy
 		
 		std::string GetManufactorer() const;
 
-		std::weak_ptr<sale> GetSale();
+		std::shared_ptr<sale> GetSale();
 
 		double GetPrice() const;
 		

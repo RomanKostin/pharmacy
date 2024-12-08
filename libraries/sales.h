@@ -12,7 +12,7 @@ namespace Pharmacy
 	{
 	private:
 		
-		std::unique_ptr<medicine> Medicine;
+		medicine* Medicine;
 
 		std::chrono::year_month_day Date;
 
