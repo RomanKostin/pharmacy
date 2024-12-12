@@ -20,9 +20,11 @@ namespace Pharmacy
 
 	public:
 
-		static std::shared_ptr<sale> CreateSale(std::chrono::year_month_day& date);
+		static std::shared_ptr<sale> CreateSale(std::chrono::year_month_day date);
 
-		bool AddMedicament(std::unique_ptr<medicine>& med);
+		bool AddMedicament(std::shared_ptr<medicine>& med);
+
+		std::chrono::year_month_day GetDate() const;
 
 		std::string ToString() const;
 	};
